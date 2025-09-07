@@ -1,0 +1,19 @@
+[package]
+name = "kurnilo-kernel"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["staticlib"]
+
+[dependencies]
+# For no_std kernel
+rlibc = "1.0"
+
+[profile.release]
+panic = "abort"
+lto = true
+
+[dependencies.compiler_builtins]
+version = "0.1"
+features = ["mem"]
