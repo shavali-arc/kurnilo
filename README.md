@@ -2,6 +2,15 @@
 
 A custom kernel designed for low resource usage, real-time performance, security, and hardware compatibility.
 
+## Architecture Support
+
+**This kernel supports x86 (32-bit i386) architecture.**
+
+- ✓ **Supported**: x86 32-bit (i386) - Intel 80386 and later
+- ✗ **Not Supported**: x86-64 (64-bit), ARM, RISC-V, or other architectures
+
+See [Architecture Support Documentation](docs/ARCHITECTURE_SUPPORT.md) for detailed information.
+
 ## Features
 - Minimal footprint
 - Real-time capabilities
@@ -10,6 +19,7 @@ A custom kernel designed for low resource usage, real-time performance, security
 
 ## Documentation
 - [Architecture Overview](docs/architecture.md)
+- [Architecture Support](docs/ARCHITECTURE_SUPPORT.md)
 
 ## Building
 1. Install MSYS2 from https://www.msys2.org/
