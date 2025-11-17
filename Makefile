@@ -1,9 +1,15 @@
 # Kurnilo Kernel Makefile
+# 
+# ARCHITECTURE SUPPORT: This kernel is designed for 32-bit x86 (i386) architecture
+# - The -m32 flag targets 32-bit x86 architecture (IA-32/i386)
+# - Compatible with Intel 80386 and later x86 processors
+# - NOT compatible with 64-bit x86-64 architecture
+# - Tested with qemu-system-i386 emulator
 
 CC = C:/msys64/mingw64/bin/gcc
 AS = C:/msys64/mingw64/bin/as
-CFLAGS = -ffreestanding -O2 -Wall -Wextra -m32
-LDFLAGS = -T boot/linker.ld -nostdlib -m32
+CFLAGS = -ffreestanding -O2 -Wall -Wextra -m32  # -m32 targets 32-bit x86
+LDFLAGS = -T boot/linker.ld -nostdlib -m32      # -m32 links for 32-bit x86
 AFLAGS =
 
 SRC_DIR = src

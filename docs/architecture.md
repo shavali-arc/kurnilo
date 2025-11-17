@@ -47,9 +47,9 @@ Kurnilo is a custom operating system kernel designed for low resource consumptio
 ### 6. Hardware Abstraction (`arch/`, `drivers/`)
 - **Purpose**: Handle hardware-specific code and device drivers.
 - **Structure**:
-  - `arch/`: Architecture-specific code (e.g., x86 GDT/IDT setup).
+  - `arch/`: Architecture-specific code (e.g., x86 GDT/IDT setup). Currently, x86-specific code is integrated throughout the kernel.
   - `drivers/`: Device drivers (e.g., keyboard, network).
-- **Design**: Modular to support multiple architectures (x86, ARM, RISC-V).
+- **Design**: Modular design to support multiple architectures in the future (ARM, RISC-V). Currently optimized for 32-bit x86 (i386) architecture only.
 
 ## Real-Time Capabilities
 - **Scheduling**: Use a real-time scheduler to ensure tasks meet deadlines.
@@ -63,8 +63,9 @@ Kurnilo is a custom operating system kernel designed for low resource consumptio
 
 ## Hardware Compatibility
 - **Abstraction Layer**: Use HAL (Hardware Abstraction Layer) for device independence.
-- **Supported Architectures**: Initially x86, extensible to others.
+- **Supported Architectures**: Currently supports 32-bit x86 (i386) architecture. The kernel is compiled with `-m32` flag and targets Intel 80386 and later processors. Extensible to other architectures in the future.
 - **Boot Process**: Multiboot-compliant for compatibility with bootloaders like GRUB.
+- **x86 Specifics**: Uses x86 VGA text mode (0xB8000), standard x86 boot sequence, and i386 instruction set.
 
 ## Build and Development
 - **Tools**: GCC for C, Rust for safety modules, Make for builds.
